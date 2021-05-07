@@ -19,17 +19,35 @@
     </LogicalFolder>
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
-        <FileNode Name="01.CREATE_TABLE.sql">
+        <FileNode Name="01.CREATE_TYPE.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGINCLAP40\MSSQL_TEST:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>AGINCLAP40\MSSQL_TEST</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>01.CREATE_TABLE.sql</FullPath>
+          <FullPath>01.CREATE_TYPE.sql</FullPath>
         </FileNode>
-        <FileNode Name="02.ALTER_TABLE.sql">
+        <FileNode Name="02.CREATE_TABLE.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGINCLAP40\MSSQL_TEST:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>AGINCLAP40\MSSQL_TEST</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>02.ALTER_TABLE.sql</FullPath>
+          <FullPath>02.CREATE_TABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="03.ALTER_TABLE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGINCLAP40\MSSQL_TEST:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGINCLAP40\MSSQL_TEST</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>03.ALTER_TABLE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="04.INSERT_INTO_PAIS.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGINCLAP40\MSSQL_TEST:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGINCLAP40\MSSQL_TEST</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>04.INSERT_INTO_PAIS.sql</FullPath>
+        </FileNode>
+        <FileNode Name="05.INSERT_INTO_TURNOESTADO.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGINCLAP40\MSSQL_TEST:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGINCLAP40\MSSQL_TEST</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>05.INSERT_INTO_TURNOESTADO.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
