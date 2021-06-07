@@ -49,6 +49,18 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>05.INSERT_INTO_TURNOESTADO.sql</FullPath>
         </FileNode>
+        <FileNode Name="06.INSERT_STORED_PROCEDURE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGINCLAP40\MSSQL_TEST:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGINCLAP40\MSSQL_TEST</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>06.INSERT_STORED_PROCEDURE.sql</FullPath>
+        </FileNode>
+        <FileNode Name="07.EJECUTAR_STORED_PROCEDURE.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AGINCLAP40\MSSQL_TEST:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AGINCLAP40\MSSQL_TEST</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>07.EJECUTAR_STORED_PROCEDURE.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">

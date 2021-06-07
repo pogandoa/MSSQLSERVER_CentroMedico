@@ -3,14 +3,24 @@ GO
 
 --1
 CREATE TABLE Paciente(
-	idPaciente Paciente identity(1,1),
-	nombre varchar(50) NOT NULL,
-	apellidos varchar (100) NOT NULL,
-	direccion varchar(50),
+	idPaciente Paciente identity(1,1) NOT NULL,
+	numIdentificacion varchar(20) NOT NULL,
+	tipoIdentificacion smallint NOT NULL,
+	nombre varchar(20) NOT NULL,
+	apellidos varchar (50) NOT NULL,
+	fNaciemiento date NOT NULL,
+	direccion varchar(100),
 	email varchar(100) NOT NULL,
 	idpais char(3) NOT NULL,
 	observacion Observacion,
-	CONSTRAINT FK_Paciente PRIMARY KEY(idPaciente)
+	CONSTRAINT PK_Paciente PRIMARY KEY(idPaciente, numIdentificacion)
+)
+GO
+
+CREATE TABLE TipoIdentificacion(
+	idTipo smallint NOT NULL,
+	descripcion varchar(15) NOT NULL
+	CONSTRAINT PK_TipoId PRIMARY KEY(idTipo)
 )
 GO
 
