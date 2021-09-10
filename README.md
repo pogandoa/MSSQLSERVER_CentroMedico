@@ -1,2 +1,2 @@
 # MSSQLSERVER_CentroMedico
-Proyecto de Base de Datos Centro Medico
+Proyecto de Practica de Base de Datos Centro Medico
