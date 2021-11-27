@@ -13,7 +13,7 @@ ALTER TABLE HistoriaPaciente
 GO
 
 ALTER TABLE HistoriaPaciente
-	ADD CONSTRAINT FK_HistP_Historia FOREIGN KEY(idHistoria) REFERENCES Turno(idHistoria)
+	ADD CONSTRAINT FK_HistP_Historia FOREIGN KEY(idHistoria) REFERENCES Historia(idHistoria)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
@@ -76,3 +76,4 @@ ALTER TABLE Pago
 	ADD CONSTRAINT FK_Pago_Concepto FOREIGN KEY(idConcepto) REFERENCES Concepto(idConcepto)
 	ON DELETE CASCADE ON UPDATE CASCADE 
 GO
+

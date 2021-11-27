@@ -13,7 +13,7 @@ CREATE TABLE Paciente(
 	email varchar(100) NOT NULL,
 	idpais char(3) NOT NULL,
 	observacion Observacion,
-	CONSTRAINT PK_Paciente PRIMARY KEY(idPaciente, numIdentificacion)
+	CONSTRAINT PK_Paciente PRIMARY KEY(idPaciente)
 )
 GO
 
