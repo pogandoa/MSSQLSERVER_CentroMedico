@@ -2,78 +2,79 @@ USE CentroMedico
 GO
 
 
-ALTER TABLE HistoriaPaciente
-	ADD CONSTRAINT FK_HistP_Paciente FOREIGN KEY(idPaciente) REFERENCES Paciente(idPaciente)
+ALTER TABLE HistoriasPacientes
+	ADD CONSTRAINT FK_HistP_Paciente FOREIGN KEY(idPaciente) REFERENCES Pacientes(idPaciente)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE HistoriaPaciente
-	ADD CONSTRAINT FK_HistP_Medico FOREIGN KEY (idMedico) REFERENCES Medico(idMedico)
+ALTER TABLE HistoriasPacientes
+	ADD CONSTRAINT FK_HistP_Medico FOREIGN KEY (idMedico) REFERENCES Medicos(idMedico)
 	ON DELETE CASCADE ON UPDATE CASCADE	;
 GO
 
-ALTER TABLE HistoriaPaciente
-	ADD CONSTRAINT FK_HistP_Historia FOREIGN KEY(idHistoria) REFERENCES Historia(idHistoria)
+ALTER TABLE HistoriasPacientes
+	ADD CONSTRAINT FK_HistP_Historia FOREIGN KEY(idHistoria) REFERENCES Historias(idHistoria)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE Turno
-	ADD CONSTRAINT FK_Estado FOREIGN KEY (estado) REFERENCES TurnoEstado(IdEstado)
+ALTER TABLE Turnos
+	ADD CONSTRAINT FK_Estado FOREIGN KEY (estado) REFERENCES TurnosEstados(IdEstado)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE TurnoPaciente
-	ADD CONSTRAINT FK_TurnoP_Paciente FOREIGN KEY (idPaciente) REFERENCES Paciente(idPaciente)
+ALTER TABLE TurnosPacientes
+	ADD CONSTRAINT FK_TurnoP_Paciente FOREIGN KEY (idPaciente) REFERENCES Pacientes(idPaciente)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE TurnoPaciente
-	ADD CONSTRAINT FK_TurnoP_Turno FOREIGN KEY(idTurno) REFERENCES Turno(idTurno)
+ALTER TABLE TurnosPacientes
+	ADD CONSTRAINT FK_TurnoP_Turno FOREIGN KEY(idTurno) REFERENCES Turnos(idTurno)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE TurnoPaciente
-	ADD CONSTRAINT FK_TurnoP_Medico FOREIGN KEY(idMedico) REFERENCES Medico(idMedico)
+ALTER TABLE TurnosPacientes
+	ADD CONSTRAINT FK_TurnoP_Medico FOREIGN KEY(idMedico) REFERENCES Medicos(idMedico)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE PagoPaciente
-	ADD CONSTRAINT FK_PagoP_Pago FOREIGN KEY(idPago) REFERENCES Pago(idPago)
+ALTER TABLE PagosPacientes
+	ADD CONSTRAINT FK_PagoP_Pago FOREIGN KEY(idPago) REFERENCES Pagos(idPago)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE PagoPaciente
-	ADD CONSTRAINT FK_PagoP_Paciente FOREIGN KEY(idPaciente) REFERENCES Paciente(idPaciente)
+ALTER TABLE PagosPacientes
+	ADD CONSTRAINT FK_PagoP_Paciente FOREIGN KEY(idPaciente) REFERENCES Pacientes(idPaciente)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE PagoPaciente
-	ADD CONSTRAINT FK_PagoP_Turno FOREIGN KEY(idTurno) REFERENCES Turno(idTurno)
+ALTER TABLE PagosPacientes
+	ADD CONSTRAINT FK_PagoP_Turno FOREIGN KEY(idTurno) REFERENCES Turnos(idTurno)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE MedicoEspecialidad
-	ADD CONSTRAINT FK_MedicoEsp_Especialidad FOREIGN KEY(idEspecialidad) REFERENCES Especialidad(idEspecialidad)
+ALTER TABLE MedicosEspecialidades
+	ADD CONSTRAINT FK_MedicoEsp_Especialidad FOREIGN KEY(idEspecialidad) 
+	    REFERENCES Especialidades(idEspecialidad)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE MedicoEspecialidad
-	ADD CONSTRAINT FK_MedicoEsp_Medico FOREIGN KEY(idMedico) REFERENCES Medico(idMedico)
+ALTER TABLE MedicosEspecialidades
+	ADD CONSTRAINT FK_MedicoEsp_Medico FOREIGN KEY(idMedico) REFERENCES Medicos(idMedico)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE Paciente
-	ADD CONSTRAINT FK_Paciente_Pais FOREIGN KEY(idPais) REFERENCES Pais(idPais)
+ALTER TABLE Pacientes
+	ADD CONSTRAINT FK_Paciente_Pais FOREIGN KEY(idPais) REFERENCES Paises(idPais)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE Paciente
-	ADD CONSTRAINT FK_TipoIdPaciente FOREIGN KEY(tipoIdentificacion) REFERENCES tipoIdentificacion(idTipo)
+ALTER TABLE Pacientes
+	ADD CONSTRAINT FK_TipoIdPaciente FOREIGN KEY(tipoIdentif) REFERENCES tipos(idTipo)
 	ON DELETE CASCADE ON UPDATE CASCADE
 GO
 
-ALTER TABLE Pago
-	ADD CONSTRAINT FK_Pago_Concepto FOREIGN KEY(idConcepto) REFERENCES Concepto(idConcepto)
+ALTER TABLE Pagos
+	ADD CONSTRAINT FK_Pago_Concepto FOREIGN KEY(idConcepto) REFERENCES Conceptos(idConcepto)
 	ON DELETE CASCADE ON UPDATE CASCADE 
 GO
 

@@ -2,13 +2,13 @@ USE CentroMedico
 GO
 
 --1
-CREATE TABLE Paciente(
+CREATE TABLE Pacientes(
 	idPaciente Paciente identity(1,1) NOT NULL,
-	numIdentificacion varchar(20) NOT NULL,
-	tipoIdentificacion smallint NOT NULL,
+	num_Identif varchar(20) NOT NULL,
+	tipo_Identif smallint NOT NULL,
 	nombre varchar(20) NOT NULL,
 	apellidos varchar (50) NOT NULL,
-	fNaciemiento date NOT NULL,
+	f_Naciemiento date NOT NULL,
 	direccion varchar(100),
 	email varchar(100) NOT NULL,
 	idpais char(3) NOT NULL,
@@ -17,25 +17,26 @@ CREATE TABLE Paciente(
 )
 GO
 
-CREATE TABLE TipoIdentificacion(
+CREATE TABLE Tipos(
 	idTipo smallint NOT NULL,
-	descripcion varchar(15) NOT NULL
+	tipo char(10) NOT NULL, 
+	descripcion varchar(30) NOT NULL
 	CONSTRAINT PK_TipoId PRIMARY KEY(idTipo)
 )
 GO
 
 --2
-CREATE TABLE Historia
+CREATE TABLE Historias
 (
 	idHistoria Historia identity(1,1),
-	fechaHistoria datetime,
+	f_Historia datetime,
 	observacion Observacion,
 	CONSTRAINT PK_idHistoria PRIMARY KEY(idHistoria)
 )
 GO
 
 --3
-CREATE TABLE HistoriaPaciente
+CREATE TABLE HistoriasPacientes
 (
 	idHistoria Historia,
 	idPaciente Paciente,
@@ -45,9 +46,9 @@ CREATE TABLE HistoriaPaciente
 GO
 
 --4
-CREATE TABLE Turno(
+CREATE TABLE Turnos(
 	idTurno Turno identity(1,1),
-	fechaTurno datetime not null,
+	f_Turno datetime not null,
 	estado Estado not null,
 	observacion Observacion,
 	CONSTRAINT PK_idTurno PRIMARY KEY(idTurno)
@@ -55,7 +56,7 @@ CREATE TABLE Turno(
 GO
 
 --5
-CREATE TABLE TurnoPaciente(
+CREATE TABLE TurnosPacientes(
 	idTurno Turno,
 	idPaciente Paciente,
 	idMedico Medico,
@@ -64,7 +65,7 @@ CREATE TABLE TurnoPaciente(
 GO
 
 --6
-CREATE TABLE TurnoEstado(
+CREATE TABLE TurnosEstados(
 	idEstado Estado NOT NULL,
 	descripcion VARCHAR(50) NOT NULL,
 	CONSTRAINT PK_TurnoEstado PRIMARY KEY(idEstado)
@@ -72,7 +73,7 @@ CREATE TABLE TurnoEstado(
 GO
 
 --7
-CREATE TABLE Medico(
+CREATE TABLE Medicos(
 	idMedico Medico identity(1,1),
 	nombre varchar(50) not null,
 	apellido varchar(50) not null,
@@ -83,7 +84,7 @@ CREATE TABLE Medico(
 GO
 
 --8
-CREATE TABLE Especialidad(
+CREATE TABLE Especialidades(
 	idEspecialidad Especialidad identity(1,1),
 	especialidad varchar(50),
 	CONSTRAINT PK_idEspecialidad PRIMARY KEY(idEspecialidad)
@@ -91,7 +92,7 @@ CREATE TABLE Especialidad(
 GO
 
 --9
-CREATE TABLE MedicoEspecialidad(
+CREATE TABLE MedicosEspecialidades(
 	idMedico Medico,
 	idEspecialidad Especialidad,
 	CONSTRAINT PK_MedicoEspecialiad PRIMARY KEY(idMedico, idEspecialidad)
@@ -99,7 +100,7 @@ CREATE TABLE MedicoEspecialidad(
 GO
 
 --10
-CREATE TABLE Pais(
+CREATE TABLE Paises(
 	idPais char(3) not null,
 	pais varchar(50),
 	CONSTRAINT PK_idPais PRIMARY KEY(idPais)
@@ -107,7 +108,7 @@ CREATE TABLE Pais(
 GO
 
 --11
-CREATE TABLE Pago(
+CREATE TABLE Pagos(
 	idPago Pago identity(1,1),
 	idConcepto Concepto not null,
 	fecha datetime not null,
@@ -119,7 +120,7 @@ CREATE TABLE Pago(
 GO
 
 --12
-CREATE TABLE PagoPaciente(
+CREATE TABLE PagosPacientes(
 	idPago Pago,
 	idPaciente Paciente,
 	idTurno Turno,
@@ -128,7 +129,7 @@ CREATE TABLE PagoPaciente(
 GO
 
 --13
-CREATE TABLE Concepto(
+CREATE TABLE Conceptos(
 	idConcepto Concepto identity(1,1),
 	descripcion varchar(100),
 	CONSTRAINT PK_idConcepto PRIMARY KEY(idConcepto)
